@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group([
+    'prefix' => 'learn',
+], function () {
+    Route::get('/', function () {
+        return view('learn.index');
+    });
+
+    Route::get('hashing', 'FunctionController@getHashingFunction');
+});
